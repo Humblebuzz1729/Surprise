@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <style>
+            @font-face {
+                src: url('font.ttf');
+                font-family: font;
+            }
+            body {
+                background-color: rgba(60, 65, 70, 255);
+                margin: 0px 0vw 0px 0vw;
+            }
+            .container {
+                background-color: rgba(90, 95, 100, 255);
+                color: rgba(230, 230, 240);
+                width: 60vw;
+                height: 90vh;
+                padding: 5vh 5vw 5vh 5vw;
+                margin: 0px 15vw 0px 15vw;
+                font-family: font;
+                font-size: 25px;
+                overflow: scroll;
+            }
+        </style>
+        <script>
+            const content = [
+                'Bhavya,',
+                'Before I begin, no, this isn\'t an April Fool\'s prank. I have the other 364 calendar days to pull a prank if I wanted to. Doing one today would make it too obvious.',
+                'I am writing this to express just how much I appreciate having you as my girlfriend. You might be wondering why I chose to do this today. The answer? I cannot wait for our anniversary, or your birthday, or Valentine\'s day, all of which are at least eight months away. To me, every day with you is a special day, and therefore appropriate, in my opinion, to write a letter like this.',
+                'You have a wonderful ability to immediately turn my day a full 180 degrees even with just a simple text. Some days just get too stressful with a lot of academic load (credits to the Timetable division), but when I open my phone and see an unread message from you, all of a sudden my day is not so shitty anymore.',
+                'I have a wonderful time texting you, but nothing compares to the time when we are actually together. There is nothing more beautiful than the smile on your face (not even the most scenic areas in Bangalore beat that). I\'ve never experienced anything as warm as being in your arms. The time we spend together, be it walking endlessly on the RnT, or sitting besides each other on the pavement, are undoubtedly my most favourite hours of the week.',
+                'I may not have exceptional physique to impress you, or fluent Telugu, but as someone who spends more time on GitHub and Codeforces than Instagram, the least I can do for you is express my love through code. And if I manage to bring even a slight smile on your face, I will consider it mission accomplished. :)',
+                'I love you. <3'
+            ];
+            loop = function (line, char) {
+                p_text = document.getElementById ('p-text-' + (line + 1));
+                p_text.innerHTML += content [line] [char];
+                char ++;
+                time = 60;
+                con = true;
+                if (char == content [line].length) {
+                    char = 0;
+                    line ++;
+                    time = 300;
+                    if (line == 7) {
+                        con = false;
+                    }
+                }
+                if (con) {
+                    setTimeout (loop, time, line, char);
+                }
+            };
+            setTimeout (loop, 1000, 0, 0);
+        </script>
+    </head>
+    <body>
+        <div class = 'container'>
+            <p id = 'p-text-1'></p>
+            <p id = 'p-text-2'></p>
+            <p id = 'p-text-3'></p>
+            <p id = 'p-text-4'></p>
+            <p id = 'p-text-5'></p>
+            <p id = 'p-text-6'></p>
+            <p id = 'p-text-7'></p>
+        </div>
+    </body>
+</html>
